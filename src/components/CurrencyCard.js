@@ -19,12 +19,6 @@ const CryptoPriceCards = () => {
     fetchData();
   }, []);
 
-  function convertUnicode(input) {
-    return input.replace(/\\+u([0-9a-fA-F]{4})/g, (a, b) =>
-      String.fromCharCode(parseInt(b, 16))
-    );
-  }
-
   return (
     <div className="flex flex-col items-center mt-8">
       <h2 className="text-4xl font-bold mb-10 text-gray-800">Bitcoin Prices</h2>

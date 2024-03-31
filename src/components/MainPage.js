@@ -4,7 +4,6 @@ import SideNavbar from "./SideNavBar";
 import CryptoPriceCards from "./CurrencyCard";
 
 const MainPage = () => {
-  const [activeItem, setActiveItem] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,8 +36,7 @@ const MainPage = () => {
       <SideNavbar />
       <main className="flex-1 p-2">
         <div className=" items-center h-full">
-          {/* {activeItem && <h2 className="text-3xl font-bold">{activeItem}</h2>} */}
-          {data && <PopulationChart populationData={data} />}
+          {loading ? <p>Loading</p> : <PopulationChart populationData={data} />}
           <CryptoPriceCards />
         </div>
       </main>

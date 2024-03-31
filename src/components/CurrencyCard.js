@@ -29,7 +29,7 @@ const CryptoPriceCards = () => {
     <div className="flex flex-col items-center mt-8">
       <h2 className="text-4xl font-bold mb-10 text-gray-800">Bitcoin Prices</h2>
       {priceData ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
           {Object.entries(priceData).map(([currency, priceInfo]) => (
             <div
               key={currency}

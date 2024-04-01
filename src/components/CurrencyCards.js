@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PriceCard from "./PriceCards";
 
 const CryptoPriceCards = () => {
   const [priceData, setPriceData] = useState(null);
@@ -25,24 +26,7 @@ const CryptoPriceCards = () => {
       {priceData ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
           {Object.entries(priceData).map(([currency, priceInfo]) => (
-            <div
-              key={currency}
-              className="rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105 shadow-xl"
-            >
-              <div className="bg-gradient-to-r from-blue-500 to-green-400 p-4 text-black rounded-t-2xl">
-                <h2 className="text-2xl font-bold mb-2">{currency}</h2>
-              </div>
-              <div className="bg-gradient-to-r from-green-400 to-blue-500 to-blue-500 p-6 text-black">
-                <p className="text-2xl font-semibold mb-4">
-                  <span className="font-medium">{priceInfo.code}</span>:{" "}
-                  {priceInfo.rate}{" "}
-                  <span
-                    dangerouslySetInnerHTML={{ __html: priceInfo.symbol }}
-                  ></span>
-                </p>
-                <p className="text-gray-600 text-lg">{priceInfo.description}</p>
-              </div>
-            </div>
+            <PriceCard currency={currency} priceInfo={priceInfo} />
           ))}
         </div>
       ) : (

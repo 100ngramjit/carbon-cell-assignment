@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PopulationChart from "./PopulationChart";
 import SideNavbar from "./SideNavBar";
-import CryptoPriceCards from "./CurrencyCard";
+import CryptoPriceCards from "./CurrencyCards";
 import WalletConnector from "./WalletConnector";
 
 const MainPage = () => {

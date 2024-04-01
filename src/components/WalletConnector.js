@@ -45,7 +45,7 @@ const WalletConnector = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 rounded-lg shadow-md">
+    <div className="flex flex-col items-center p-6">
       {!isConnected && (
         <button
           className="px-4 py-2 bg-[rgba(75,192,192,1)] text-white rounded-md hover:bg-[rgba(52,134,134,1)] disabled:bg-gray-400 disabled:cursor-not-allowed"

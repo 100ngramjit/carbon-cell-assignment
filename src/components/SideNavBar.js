@@ -7,6 +7,7 @@ import {
   FaHistory,
   FaSearch,
 } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const SideNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,11 +40,11 @@ const SideNavbar = () => {
     fetchDataForPosts();
   }, []);
   const navItems = [
-    { id: 1, label: "Home", icon: FaHome },
-    { id: 2, label: "Organization", icon: FaBuilding },
-    { id: 3, label: "Assets", icon: FaBoxes },
-    { id: 4, label: "Trade", icon: FaChartLine },
-    { id: 5, label: "History", icon: FaHistory },
+    { id: 1, label: "Home", icon: FaHome, path: "/" },
+    { id: 2, label: "Organization", icon: FaBuilding, path: "/organisation" },
+    { id: 3, label: "Assets", icon: FaBoxes, path: "/assets" },
+    { id: 4, label: "Trade", icon: FaChartLine, path: "/trade" },
+    { id: 5, label: "History", icon: FaHistory, path: "/history" },
   ];
 
   const toggleNavbar = () => {
@@ -89,20 +90,21 @@ const SideNavbar = () => {
             />
           </div>
         </div>
-        <ul className="ml-0 list-none">
+        <div className="flex flex-col items-start justify-center ml-0 ">
           {navItems.map((item) => (
-            <li
+            <NavLink
               key={item.id}
-              className={`flex items-center text-left py-2 px-4 rounded transition-colors duration-300 ${
-                activeItem === item.label ? "text-green-600" : "text-white"
-              }`}
-              onClick={() => handleItemClick(item)}
+              to={item.path}
+              className={({ isActive }) =>
+                `flex text-gray-300 hover:bg-gray-700 hover:text-white p-3 rounded-md 
+          ${isActive ? "text-green-500" : "text-gray-300"}`
+              }
             >
-              <item.icon className="mr-2" />
-              {item.label}
-            </li>
+              <item.icon className="m-1" />
+              <span>{item.label}</span>
+            </NavLink>
           ))}
-        </ul>
+        </div>
       </nav>
     </div>
   );

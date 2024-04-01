@@ -96,7 +96,7 @@ const SideNavbar = () => {
               key={item.id}
               to={item.path}
               className={({ isActive }) =>
-                `flex text-gray-300 hover:bg-gray-700 hover:text-white p-3 rounded-md 
+                `flex text-gray-300 p-3 rounded-md 
           ${isActive ? "text-green-500" : "text-gray-300"}`
               }
             >

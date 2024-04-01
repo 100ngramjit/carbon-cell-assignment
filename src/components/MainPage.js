@@ -36,9 +36,9 @@ const MainPage = () => {
     <div className="flex flex-col md:flex-row md:min-h-screen">
       <SideNavbar />
       <main className="flex-1 p-2">
-        <WalletConnector />
         <div className=" items-center h-full">
           {loading ? <p>Loading</p> : <PopulationChart populationData={data} />}
+          <WalletConnector />
           <CryptoPriceCards />
         </div>
       </main>

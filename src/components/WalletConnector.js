@@ -45,19 +45,28 @@ const WalletConnector = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center p-6 bg-gray-100 rounded-lg shadow-md">
       {!isConnected && (
-        <button onClick={connectWallet} disabled={!web3}>
+        <button
+          className="px-4 py-2 bg-[rgba(75,192,192,1)] text-white rounded-md hover:bg-[rgba(52,134,134,1)] disabled:bg-gray-400 disabled:cursor-not-allowed"
+          onClick={connectWallet}
+          disabled={!web3}
+        >
           Connect Wallet
         </button>
       )}
       {isConnected && (
-        <div>
-          <p>Connected account: {accounts[0]}</p>
-          <button onClick={disconnectWallet}>Disconnect Wallet</button>
+        <div className="flex items-center mb-4">
+          <p className="mr-4">Connected account: {accounts[0]}</p>
+          <button
+            className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+            onClick={disconnectWallet}
+          >
+            Disconnect Wallet
+          </button>
         </div>
       )}
-      {error && <p>{error}</p>}
+      {error && <p className="text-red-500 font-bold">{error}</p>}
     </div>
   );
 };

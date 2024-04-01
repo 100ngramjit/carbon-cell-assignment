@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PriceCard from "./PriceCards";
+import { FaBitcoin } from "react-icons/fa";
 
 const CryptoPriceCards = () => {
   const [priceData, setPriceData] = useState(null);
@@ -22,7 +23,10 @@ const CryptoPriceCards = () => {
 
   return (
     <div className="flex flex-col items-center mt-8">
-      <h2 className="text-4xl font-bold mb-10 text-gray-800">Bitcoin Prices</h2>
+      <h2 className="flex text-4xl font-bold mb-10 text-gray-800 gap-2">
+        <FaBitcoin />
+        Bitcoin Prices
+      </h2>
       {priceData ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
           {Object.entries(priceData).map(([currency, priceInfo]) => (

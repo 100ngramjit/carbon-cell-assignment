@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PopulationChart from "./PopulationChart";
 import SideNavbar from "./SideNavBar";
 import CryptoPriceCards from "./CurrencyCard";
+import WalletConnector from "./WalletConnector";
 
 const MainPage = () => {
   const [data, setData] = useState(null);
@@ -35,6 +36,7 @@ const MainPage = () => {
     <div className="flex flex-col md:flex-row md:min-h-screen">
       <SideNavbar />
       <main className="flex-1 p-2">
+        <WalletConnector />
         <div className=" items-center h-full">
           {loading ? <p>Loading</p> : <PopulationChart populationData={data} />}
           <CryptoPriceCards />
